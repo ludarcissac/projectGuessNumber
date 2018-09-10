@@ -6,7 +6,7 @@
 
 * Creation Date : 10-09-2018
 
-* Last Modified : lun. 10 sept. 2018 15:08:53 CEST
+* Last Modified : lun. 10 sept. 2018 16:46:32 CEST
 
 * Created By :
 
@@ -34,13 +34,19 @@ int main()
 			return 0 ;
 		}
 		else if ( guess > theNb )
+		{
 			printf("\nLower !\n") ;
+			nbMax = nbMax > guess ? guess : nbMax ;
+		}
 		else
+		{
 			printf("\nHigher !\n") ;
+			nbMin = nbMin < guess ? guess : nbMin ;
+		}
 
 		--tries ;
 
-		printf("You ever use numbers : \n");
+		printf("History : \n");
 		results[cpt]=guess;
 		for(cptStart=0;cptStart<=cpt;cptStart++)
 		{
