@@ -6,7 +6,7 @@
 
 * Creation Date : 10-09-2018
 
-* Last Modified : lun. 10 sept. 2018 14:55:28 CEST
+* Last Modified : lun. 10 sept. 2018 15:08:53 CEST
 
 * Created By :  
 
@@ -29,16 +29,18 @@ int main()
 		if (guess == theNb )
 		{
 			printf("Congrats !\n") ;
-			break ;
+			return 0 ;
 		}
+		else if ( guess > theNb )
+			printf("Lower !\n") ;
 		else
-			printf("Try again !\n") ;
+			printf("Higher !\n") ;
 
 		--tries ;
 	}
 	while( tries ) ;
 
-	printf("The number was %d\n", theNb) ;
+	printf("You lost :'(\nThe number was %d\n", theNb) ;
 	
    return 0;
 }
