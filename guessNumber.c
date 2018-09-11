@@ -18,11 +18,39 @@
 
 int main()
 {
+
 	srand(time(NULL)) ;
-	int nbMin = 1, nbMax = 1000, tries = 10, theNb = nbMin + rand() % nbMax, guess ;
+	int nbMin = 1, nbMax = 100, tries = 10, theNb = nbMin + rand() % nbMax, guess ;
 	int results[tries];
 	int cpt=0;
 	int cptStart;
+    int level ;
+
+    do
+    {
+        printf("Choisir le niveau (1: facile, 2: moyen, 3: difficile.\n") ;
+        __fpurge(stdin) ;
+        scanf("%d", &level) ;
+        switch(level)
+        {
+            case 1 :
+                break;
+            case 2 :
+                nbMax = 1e4 ;
+                tries = 15 ;
+                break ;
+            case 3 :
+                nbMax = 1e6 ;
+                tries = 20 ;
+                break ;
+            default :
+                printf("Invalide\n") ;
+                break ;
+
+        }
+    }
+    while(level < 1 || level > 3) ;
+
 	do
 	{
 		printf("\nTries left : %d\n", tries) ;
