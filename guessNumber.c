@@ -19,10 +19,12 @@
 int main()
 {
 	srand(time(NULL)) ;
-	int nbMin = 1, nbMax = 1000, tries = 10, theNb = nbMin + rand() % nbMax, guess ;
-	int results[tries];
+	int nbMin = 1, nbMax = 1000, tries, theNb = nbMin + rand() % nbMax, guess ;
 	int cpt=0;
 	int cptStart;
+	printf("Enter the number of tries : \n");
+	scanf("%d", &tries);
+	int results[tries];
 	do
 	{
 		printf("\nTries left : %d\n", tries) ;
